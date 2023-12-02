@@ -7,7 +7,7 @@ export default function DropDownMenu({children,title}){
   return(
     <>
     <div>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <button 
         className="button"
         type="button"

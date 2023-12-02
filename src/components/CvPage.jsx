@@ -1,36 +1,39 @@
-export default function Page(){
-  return(
-    <>  
-    <div className="left">
-      <Section 
-        title={"Education"}
-      />
-      <Section 
-        title={"Experience"}
-      />
-    </div>
-    <div className="right">
-      <Section
-        title={"Personal Info"}
-      /> 
-    </div>
-    </>
-  )
-}
+export default function Section({title,formData,leftSide}){
 
-function Section({title,formData}){
-  // const dataToDisplay = formData.map( data => <p key={data}>{data}</p> )
+  function convertData(){
+    
+    let dataToShow = []
+    for (const data in leftSide){
+      dataToShow.push( <p> { `${data}: ${leftSide[data]}`} </p> )
+    }
+    return dataToShow
+  }
+
   return(
     <>
     <div>
       <article>
-        <h3>{title}</h3>
-        <div>
-          <p id="date">19/19/2001 – 19/19/218</p>
-          <p id="institution">el corazon del santuario</p>
-          <p id="location">Barranquilla - Atlantico</p>
-          <p id="degree">secundaria</p>
-        </div>
+          {formData && JSON.stringify(formData).length > 2 && (
+            <>
+            <h3>{title}</h3>
+            <div>
+              { formData?.fullName?.length > 0 && <p>Full Name: {formData.fullName}</p>}
+              { formData?.phoneNumber?.length > 0 && <p>Phone Number: {formData.phoneNumber}</p>}
+              { formData?.email?.length > 0 && <p>Email: {formData.email}</p>}
+              { formData?.adress?.length > 0 && <p>Address: {formData.adress}</p>}
+            </div>
+            </>
+           )}
+      </article>
+      <article>
+          { leftSide && JSON.stringify(leftSide).length > 2 && (
+            <>
+            <h3>{title}</h3>
+            <div>
+             {convertData()}
+            </div>
+            </>
+           )}
       </article>
     </div>
     </>

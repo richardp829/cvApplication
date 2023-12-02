@@ -1,5 +1,5 @@
 import FormSection from './components/AddInfoSection'
-import Page from './components/CvPage'
+import Section from './components/CvPage'
 import DropDown from './components/NewDropDownMenu'
 import './App.css'
 
@@ -30,6 +30,7 @@ function App() {
   return(
     <>
         <div className='leftSection'>
+          <h2>Personal Information</h2>
           <FormSection 
             title={"Personal Information"}
             inputs={
@@ -78,7 +79,22 @@ function App() {
           </DropDown>
         </div>
         <div className='rightSection'>
-          <Page />
+          <div className="left">
+            <Section 
+              title={"Education"}
+              leftSide={educationInfo}
+            />
+            <Section 
+              title={"Experience"}
+              leftSide={experienceInfo}
+            />
+          </div>
+          <div className="right">
+            <Section
+              title={"Personal Info"}
+              formData={personalInfo}
+            /> 
+          </div>
         </div>
     </>
     

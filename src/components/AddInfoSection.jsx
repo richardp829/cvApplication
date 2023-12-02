@@ -11,7 +11,6 @@ export default function InformationForm({title,inputs,data,handleClick,handleCha
 
   return (
     <>
-    <h1>{title}</h1>
       { inputs.map(input => { 
         const [title,type] = input.split(":") 
         return (

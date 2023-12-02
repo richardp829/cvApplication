@@ -8,11 +8,3 @@ export function toCamelCase(text){
 
   return camelCaseText;
 }
-
-// function showData(){
-//   const data = [];
-//   for(const info in formData){ 
-//     data.push( <p key={info}>{ `${info}: ${formData[info]}` }</p> )
-//    }
-//   return data
-// }

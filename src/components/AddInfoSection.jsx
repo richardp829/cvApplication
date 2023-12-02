@@ -1,7 +1,17 @@
-export default function InformationForm({title,inputs}){
+import { toCamelCase } from "../functions/functions";
+
+export default function InformationForm({title,inputs,data,handleClick,handleChange}){
+  
+  function updateFormData(value,title){
+    const key = toCamelCase(title)
+    const updatedData = {...data, [key]: value}
+    data = updatedData;
+    handleChange(data)
+  }
+
   return (
     <>
-      <h1>{title}</h1>
+    <h1>{title}</h1>
       { inputs.map(input => { 
         const [title,type] = input.split(":") 
         return (
@@ -9,23 +19,30 @@ export default function InformationForm({title,inputs}){
             title={title}
             type={type}
             key={title}
+            handleChange={updateFormData}
           />
         )
         }) 
       }
-      <button>Save</button>
-      
+    <button  
+      className="button" 
+      type="submit"
+      onClick={()=> handleClick(data)}
+      >Save</button>
     </>
   )
 }
 
-function FormField({title,type}){
+function FormField({title,type,handleChange}){
   
   
   return (
     <>
       <label htmlFor="">{title}</label>
-      <input type={type} />
+      <input 
+        onChange={(e)=>{ handleChange(e.target.value,title) }}
+        type={type}
+      />
     </>
   )
 }

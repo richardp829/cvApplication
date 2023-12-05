@@ -1,6 +1,5 @@
 import FormSection from './components/AddInfoSection'
 import Section from './components/CvPage'
-import DropDown from './components/NewDropDownMenu'
 import Page from "./components/Page"
 import NewDropDown from './components/DropDown'
 import './App.css'
@@ -24,10 +23,6 @@ function App() {
 
   function updatePersonalInfo(data){
     setPersonalInfo(data)
-  }
-
-  function showInfo(data){
-    console.log(data)
   }
 
   function addEducationalInformation(data){

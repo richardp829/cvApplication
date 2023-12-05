@@ -8,27 +8,41 @@
   min-height: 100vh;
   display: flex;
   width: 100%;
+  padding: 2rem;
+  column-gap: 1rem;
+
+  background-color: #f3f4f6;
 }
 
 .leftSection {
-  flex: 0.4;
+  flex: 0.35;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .rightSection {
-  flex: 0.6;
+  flex: 0.65;
   display: flex;
-  border: solid blueviolet 1px;
+  height: 100vh;
 }
 
 .left {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 0.6;
+  padding-block: 3rem;
+  gap: 2rem;
+
+  background-color: white;
 }
 
 .right {
-  flex: 1;
-  background-color: aquamarine;
+  flex: 0.4;
+  padding-block: 3rem;
+  background-color: #0e374e;
+  color: white;
+  text-align: center;
 }
 
 .button {
@@ -37,3 +51,98 @@
   border-radius: 7px;
   cursor: pointer;
 }
+
+svg {
+  width: 25px;
+  height: 25px;
+  margin-right: 7px;
+}
+
+.information__section {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  background-color: rgba(14,55,78,.07);
+  width: 100%;
+  text-align: center;
+}
+
+.information {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: .5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: .3rem;
+
+  align-items: left;
+
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.form input {
+  width: 100%;
+  padding: 7px;
+  border-radius: 7px;
+  border: 1px solid gray;
+  background-color: #f3f4f6;
+}
+
+.form label{
+  font-size: 1.2rem;
+  font-weight: 550;
+}
+
+.personal__information{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.personal__details {
+  text-align: left;
+}
+
+.personal__details p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  background-color: #0e374e;
+  color: white;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.form__title {
+  display: flex;
+  justify-content: center;
+}
+
+.information__row p {
+  font-size: 1.1rem;
+}
+
+.information__span {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-right: 7px;
+}
+
+.information__row {
+  display: flex;
+}
+

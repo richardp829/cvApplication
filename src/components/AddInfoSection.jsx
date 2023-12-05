@@ -1,6 +1,6 @@
 import { toCamelCase } from "../functions/functions";
 
-export default function InformationForm({title,inputs,data,handleClick,handleChange}){
+export default function InformationForm({inputs,data,handleChange,title}){
   
   function updateFormData(value,title){
     const key = toCamelCase(title)
@@ -10,7 +10,8 @@ export default function InformationForm({title,inputs,data,handleClick,handleCha
   }
 
   return (
-    <>
+      <div className="form">
+        <h2 className="form__title">{title}</h2>
       { inputs.map(input => { 
         const [title,type] = input.split(":") 
         return (
@@ -23,17 +24,11 @@ export default function InformationForm({title,inputs,data,handleClick,handleCha
         )
         }) 
       }
-    <button  
-      className="button" 
-      type="submit"
-      onClick={()=> handleClick(data)}
-      >Save</button>
-    </>
+      </div>
   )
 }
 
-function FormField({title,type,handleChange}){
-  
+export function FormField({title,type,handleChange}){
   
   return (
     <>
